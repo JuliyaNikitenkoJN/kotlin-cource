@@ -65,9 +65,9 @@ false && ! (true || true)
 false && false
 false
 3. !(var h = 7; h-- > 6) || (8 + 1 == 9) && (3 % 2 != 1)
-true || true && false // тот же случай - если перед || стоит true, то уже в любом случае будет true
-true || false
-true
+false || true && false // тот же случай - если перед || стоит true, то уже в любом случае будет true
+false || false
+false
 4. ((var i = 5; i++ == 5) || (2 * 2 != 4)) && (10 / 2 == 5)
 true || false && true
 true || false
