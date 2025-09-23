@@ -1,14 +1,14 @@
 package   ru.stimmax.lessons.lesson06.homework
 
 fun main() {
-    seasons(arg = 12)
-    yearsDog(age = 1)
-    travelMode(distanceKm = 3.8) //как написать проверку на отрицательное число?
-    discount(points = 845)
+    seasons(arg = 9)
+    yearsDog(age = -1)
+    travelMode(distanceKm = - 15.0)
+    discount(points = -101)
     type(exn = ".jpeg")
-    conversionTemperature(degreesValue = 38, degreesName = 'F')
-    closes(temperature = 16, arg = true)
-    cinema(age = 23)
+    conversionTemperature(degreesValue = 182, degreesName = 'F')
+    closes(temperature = 135, arg = true)
+    cinema(age = 6)
 
     class homework06 {
 
@@ -47,7 +47,7 @@ fun yearsDog(age: Int) {
     } else if (age in 2 until 3) {
         println("if dog has 2 years old -> in human age is 21 years old")
     } else if (age in 3..27) {
-        println("if dog has " + age + " years old is " + (21 + (age - 2)  * 4 ) +" human's years")
+        println("if dog has " + age + " years old is " + (21 + (age - 2) * 4) + " human's years")
     } else {
         println("Dog dead..!")
     }
@@ -61,6 +61,7 @@ fun travelMode(distanceKm: Double) {
     val mode = when {
         distanceKm in 0.0..1.0 -> println("to walk")
         distanceKm in 1.1..5.0 -> println("by bicycle")
+        distanceKm <0 -> println("Negative distance is not valid!")
         else -> println("by car")
     }
 }
@@ -75,6 +76,7 @@ fun discount(points: Int) {
     when {
         points in 100..1000 -> println("You have " + (points / bonusSelector * 2) + " bonus balls")
         points > 1000 -> println("You have " + (points / bonusSelector * 3) + " bonus balls")
+        points <0 -> println("Error! There is no negative value of money!")
         else -> println("You dont have bonus balls")
     }
 
@@ -102,16 +104,17 @@ fun type(exn: String) {
 // Единицу измерения нужно передать вторым аргументом функции.
 // Несколько аргументов передаются через запятую. Распечатай в консоль
 // результат конвертации с добавлением единицы измерения.
-// Чтобы добавить единицу измерения после результата используй
-// функцию печати без переноса строки print("C") или print("F").
+// Чтобы добавить единицу измерения после результата, используй функцию печати без переноса строки print("C") или print("F").
 
 fun conversionTemperature(degreesValue: Int, degreesName: Char) {
 
     if (degreesName == 'F') {
-        print(((degreesValue - 32) * 5 / 9)); println('C')
+        print("If temperature is " + degreesValue + " " + degreesName + " than conversion T is "); print(((degreesValue - 32) * 5 / 9)); println(" " + 'C')
     } else if (degreesName == 'C') {
-        print(((degreesValue * 9) / 5) + 32); println('F')
-    } else println("Not a temperature!")
+        print("If temperature is " + degreesValue + " " + degreesName + " than conversion T is ");print(((degreesValue * 9) / 5) + 32); println("" + 'F')
+    } else {
+        println("Not a temperature!")
+    }
 }
 
 
@@ -127,9 +130,9 @@ fun closes(temperature: Int, arg: Boolean) {
         println("Put on your jacket and hat")
     } else if (temperature in 10..18) {
         println("Put on a windbreaker")
-    } else if  (temperature in 18 until 35) {  // mistake?
-        println("Put on a T-shirt")}
-    else println("Temperature is incorrect!")
+    } else if (temperature in 18 until 35) {  // mistake?
+        println("Put on a T-shirt")
+    } else println("Temperature is incorrect!")
 }
 
 
