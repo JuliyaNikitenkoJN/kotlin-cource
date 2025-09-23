@@ -11,7 +11,7 @@ fun main() {
     var costOfCargo: Double? = null
     val costOfCargoStandart: Double = 50.0
     val insurancePercent: Double = 0.5
-    var resultDelivery: Double = (costDelivery) + (costOfCargo ?: costOfCargoStandart) / 100 * insurancePercent
+    var resultDelivery: Double = (costDelivery) + (((costOfCargo ?: costOfCargoStandart) / 100) * insurancePercent)
     println(resultDelivery)
 
     var atmosfericPressure: Double? = null
